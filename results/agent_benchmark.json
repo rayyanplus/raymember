@@ -1,0 +1,20 @@
+{
+  "total_scenarios": 30,
+  "strategies_evaluated": {
+    "1. No Memory": {
+      "accuracy_percent": 0.0,
+      "avg_context_characters": 0.0,
+      "avg_selected_items": 0.0
+    },
+    "2. Naive Full Memory": {
+      "accuracy_percent": 100.0,
+      "avg_context_characters": 32.3,
+      "avg_selected_items": 1.7
+    },
+    "3. Raymember Ranked Memory": {
+      "accuracy_percent": 100.0,
+      "avg_context_characters": 687.6,
+      "avg_selected_items": 4.9
+    }
+  }
+}

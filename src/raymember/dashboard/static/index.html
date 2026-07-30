@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raymember Local World Memory Dashboard (v0.1.0)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --accent-blue: #38bdf8;
+      --accent-indigo: #818cf8;
+      --accent-green: #34d399;
+      --accent-amber: #fbbf24;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .title-area h1 { font-size: 1.4rem; font-weight: 700; }
+    .title-area p { font-size: 0.85rem; color: var(--text-muted); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    select, button, input {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+
+    button {
+      background: var(--accent-blue);
+      color: #0f172a;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .metric-title { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; }
+    .metric-value { font-size: 1.8rem; font-weight: 700; margin-top: 6px; }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
+
+    .section-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .rooms-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .room-card {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .room-header {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      text-transform: capitalize;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 6px;
+    }
+
+    .entity-tag {
+      background: #1e293b;
+      border: 1px solid var(--card-border);
+      padding: 8px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    .entity-name { font-size: 0.9rem; font-weight: 500; }
+    .entity-sub { font-size: 0.75rem; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: 4px; }
+
+    .prov-badge {
+      background: rgba(129, 140, 248, 0.2);
+      color: var(--accent-indigo);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .timeline-item {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.85rem;
+    }
+
+    pre {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">R</div>
+      <div class="title-area">
+        <h1>Raymember Dashboard <span style="font-size:0.8rem; color: var(--accent-green); font-weight: normal;">v0.1.0</span></h1>
+        <p>Persistent World-Memory Layer with Namespace & Provenance Isolation</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <label for="ns-select" style="font-size:0.85rem; color:var(--text-muted);">Namespace:</label>
+      <select id="ns-select" onchange="refreshAll()"></select>
+      <button onclick="exportJSON()">Export JSON</button>
+    </div>
+  </header>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-title">Total Entities</div>
+      <div class="metric-value" id="m-total-entities">0</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-title">Active Entities</div>
+      <div class="metric-value" id="m-active-entities">0</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-title">Total Observations</div>
+      <div class="metric-value" id="m-total-obs">0</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-title">Uncertain Beliefs</div>
+      <div class="metric-value" id="m-uncertain-entities" style="color: var(--accent-amber);">0</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-title">Avg Confidence</div>
+      <div class="metric-value" id="m-avg-conf" style="color: var(--accent-green);">1.00</div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <div>
+      <div class="section-box">
+        <div class="section-title">Context Inspector & Memory Query</div>
+        <div style="display:flex; gap:10px; margin-bottom:12px;">
+          <input type="text" id="query-input" placeholder="e.g. Where is the backpack?" style="flex:1;">
+          <button onclick="runQuery()">Inspect Context</button>
+        </div>
+        <pre id="query-answer">Retrieved context diagnostics will be displayed here...</pre>
+      </div>
+
+      <div class="section-box">
+        <div class="section-title">World State (Grouped by Room)</div>
+        <div class="rooms-container" id="rooms-grid"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-box">
+        <div class="section-title">Memory Write Panel</div>
+        <form onsubmit="submitObservation(event)">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <input type="text" id="obs-entity" placeholder="Entity (e.g. laptop)" required>
+            <input type="text" id="obs-room" placeholder="Room (e.g. washroom)" oninput="checkLocationResolution()" required>
+            
+            <!-- Resolution Preview Box -->
+            <div id="resolution-preview" style="display:none; background:#0f172a; border:1px solid var(--card-border); padding:10px; border-radius:8px; font-size:0.82rem;">
+              <div id="res-status-text" style="margin-bottom:6px; font-weight:500;"></div>
+              <div id="res-actions" style="display:flex; gap:8px;"></div>
+            </div>
+
+            <input type="number" id="obs-conf" placeholder="Confidence" step="0.05" value="0.90" min="0" max="1" required>
+            <input type="text" id="obs-src" placeholder="Source (e.g. camera_1)" value="user" required>
+            <select id="obs-prov">
+              <option value="user">USER (High Trust)</option>
+              <option value="sensor" selected>SENSOR</option>
+              <option value="tool">TOOL</option>
+              <option value="agent">AGENT</option>
+              <option value="inferred">INFERRED</option>
+            </select>
+            <button type="submit">Submit Memory Write</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="section-box">
+        <div class="section-title">Activity Timeline</div>
+        <div id="timeline-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function loadNamespaces() {
+      try {
+        const res = await fetch('/api/namespaces');
+        const data = await res.json();
+        const sel = document.getElementById('ns-select');
+        sel.innerHTML = '';
+        data.namespaces.forEach(ns => {
+          const opt = document.createElement('option');
+          opt.value = ns;
+          opt.innerText = ns;
+          sel.appendChild(opt);
+        });
+      } catch (e) { console.error(e); }
+    }
+
+    async function loadOverview() {
+      const ns = document.getElementById('ns-select').value || 'default';
+      try {
+        const res = await fetch(`/api/overview?namespace=${encodeURIComponent(ns)}`);
+        const data = await res.json();
+        document.getElementById('m-total-entities').innerText = data.total_entities;
+        document.getElementById('m-active-entities').innerText = data.active_entities;
+        document.getElementById('m-total-obs').innerText = data.total_observations;
+        document.getElementById('m-uncertain-entities').innerText = data.uncertain_entities;
+        document.getElementById('m-avg-conf').innerText = data.average_confidence.toFixed(2);
+      } catch (e) { console.error(e); }
+    }
+
+    async function loadWorldState() {
+      const ns = document.getElementById('ns-select').value || 'default';
+      try {
+        const res = await fetch(`/api/entities?namespace=${encodeURIComponent(ns)}`);
+        const data = await res.json();
+        const grid = document.getElementById('rooms-grid');
+        grid.innerHTML = '';
+
+        const grouped = {};
+        data.entities.forEach(e => {
+          const room = e.room || 'unknown';
+          if (!grouped[room]) grouped[room] = [];
+          grouped[room].push(e);
+        });
+
+        if (Object.keys(grouped).length === 0) {
+          grid.innerHTML = '<div style="grid-column: 1/-1; color: var(--text-muted);">No entities in this namespace.</div>';
+          return;
+        }
+
+        for (const [room, items] of Object.entries(grouped)) {
+          const card = document.createElement('div');
+          card.className = 'room-card';
+          let itemsHtml = '';
+          items.forEach(it => {
+            const confPct = Math.round(it.confidence * 100);
+            itemsHtml += `
+              <div class="entity-tag">
+                <div class="entity-name">${it.canonical_name} <span class="prov-badge">${it.provenance}</span></div>
+                <div class="entity-sub">
+                  <span>State: ${it.state}</span>
+                  <span style="color: ${confPct < 60 ? 'var(--accent-amber)' : 'var(--accent-green)'}">${confPct}%</span>
+                </div>
+              </div>
+            `;
+          });
+          card.innerHTML = `<div class="room-header">${room}</div>${itemsHtml}`;
+          grid.appendChild(card);
+        }
+      } catch (e) { console.error(e); }
+    }
+
+    async function loadTimeline() {
+      const ns = document.getElementById('ns-select').value || 'default';
+      try {
+        const res = await fetch(`/api/timeline?namespace=${encodeURIComponent(ns)}`);
+        const data = await res.json();
+        const list = document.getElementById('timeline-list');
+        list.innerHTML = '';
+        if (!data.timeline || data.timeline.length === 0) {
+          list.innerHTML = '<div style="color: var(--text-muted); font-size: 0.85rem;">No recent transitions.</div>';
+          return;
+        }
+        data.timeline.slice(0, 6).forEach(t => {
+          const item = document.createElement('div');
+          item.className = 'timeline-item';
+          const oldR = (t.old_location || {}).room || 'unknown';
+          const newR = (t.new_location || {}).room || 'unknown';
+          item.innerHTML = `
+            <div style="font-size:0.75rem; color:var(--text-muted);">${t.new_timestamp} [prov=${t.provenance}]</div>
+            <div style="font-weight:500;">${t.entity_id}: ${oldR} → ${newR}</div>
+          `;
+          list.appendChild(item);
+        });
+      } catch (e) { console.error(e); }
+    }
+
+    async function runQuery() {
+      const q = document.getElementById('query-input').value;
+      if (!q) return;
+      const ns = document.getElementById('ns-select').value || 'default';
+      try {
+        const res = await fetch(`/api/context-inspector?q=${encodeURIComponent(q)}&namespace=${encodeURIComponent(ns)}`);
+        const data = await res.json();
+        document.getElementById('query-answer').innerText = data.formatted_context;
+      } catch (e) {
+        document.getElementById('query-answer').innerText = 'Error inspecting context.';
+      }
+    }
+
+    async function submitObservation(ev) {
+      ev.preventDefault();
+      const entity = document.getElementById('obs-entity').value;
+      const room = document.getElementById('obs-room').value;
+      const conf = parseFloat(document.getElementById('obs-conf').value);
+      const src = document.getElementById('obs-src').value;
+      const prov = document.getElementById('obs-prov').value;
+      const ns = document.getElementById('ns-select').value || 'default';
+
+      try {
+        await fetch('/api/observe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ entity, room, confidence: conf, source: src, provenance: prov, namespace: ns })
+        });
+        refreshAll();
+      } catch (e) { alert('Failed to submit observation.'); }
+    }
+
+    let resolutionTimeout = null;
+    let currentResolutionData = null;
+
+    function checkLocationResolution() {
+      clearTimeout(resolutionTimeout);
+      const val = document.getElementById('obs-room').value.trim();
+      const box = document.getElementById('resolution-preview');
+      const textDiv = document.getElementById('res-status-text');
+      const actionsDiv = document.getElementById('res-actions');
+
+      if (!val || val.length < 2) {
+        box.style.display = 'none';
+        return;
+      }
+
+      resolutionTimeout = setTimeout(async () => {
+        const ns = document.getElementById('ns-select').value || 'default';
+        try {
+          const res = await fetch(`/api/resolve-location?location=${encodeURIComponent(val)}&namespace=${encodeURIComponent(ns)}`);
+          const data = await res.json();
+          currentResolutionData = data;
+          box.style.display = 'block';
+
+          if (data.resolution_method === 'ALIAS' || (data.canonical_location !== val && !data.requires_confirmation)) {
+            textDiv.innerHTML = `<span style="color:var(--accent-green)">Interpreted as: <b>${data.canonical_location}</b></span> (Method: ${data.resolution_method})`;
+            actionsDiv.innerHTML = '';
+          } else if (data.requires_confirmation) {
+            const candName = data.canonical_location;
+            const candConf = Math.round(data.resolution_confidence * 100);
+            textDiv.innerHTML = `<span style="color:var(--accent-amber)">Unknown location. Possible match: <b>${candName}</b> (${candConf}% conf)</span>`;
+            actionsDiv.innerHTML = `
+              <button type="button" onclick="confirmMapping('${val}', '${candName}')" style="background:var(--accent-green); color:#0f172a; padding:4px 8px; font-size:0.75rem;">Map to ${candName}</button>
+              <button type="button" onclick="rejectMapping('${val}', '${candName}')" style="background:#334155; color:#fff; padding:4px 8px; font-size:0.75rem;">Keep as new location</button>
+            `;
+          } else {
+            textDiv.innerHTML = `<span style="color:var(--text-muted)">Location: <b>${data.canonical_location}</b> (Method: ${data.resolution_method})</span>`;
+            actionsDiv.innerHTML = '';
+          }
+        } catch (e) {
+          box.style.display = 'none';
+        }
+      }, 300);
+    }
+
+    async function confirmMapping(raw, canonical) {
+      const ns = document.getElementById('ns-select').value || 'default';
+      try {
+        await fetch('/api/confirm-alias', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ alias: raw, canonical: canonical, namespace: ns })
+        });
+        checkLocationResolution();
+      } catch (e) { alert('Failed to confirm mapping.'); }
+    }
+
+    async function rejectMapping(raw, canonical) {
+      const ns = document.getElementById('ns-select').value || 'default';
+      try {
+        await fetch('/api/reject-alias', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ raw_location: raw, canonical: canonical, namespace: ns })
+        });
+        checkLocationResolution();
+      } catch (e) { alert('Failed to reject mapping.'); }
+    }
+
+    function exportJSON() {
+      const ns = document.getElementById('ns-select').value || 'default';
+      window.open(`/api/export?namespace=${encodeURIComponent(ns)}`, '_blank');
+    }
+
+    async function refreshAll() {
+      await loadOverview();
+      await loadWorldState();
+      await loadTimeline();
+    }
+
+    window.onload = async () => {
+      await loadNamespaces();
+      await refreshAll();
+    };
+  </script>
+</body>
+</html>

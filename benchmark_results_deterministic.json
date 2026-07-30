@@ -1,0 +1,101 @@
+{
+  "evaluation_metadata": {
+    "model_name": "DeterministicOfflineModel",
+    "is_real_model": false,
+    "total_scenarios": 32,
+    "num_runs": 3,
+    "evaluation_category": "Deterministic Mock Evaluation"
+  },
+  "strategies": {
+    "Strategy A (No Memory)": {
+      "accepted_state_accuracy": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "conflict_interpretation_accuracy": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "unsupported_fact_rate": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "contradiction_rate": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "provenance_citation_accuracy": {
+        "mean": 0.8125,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "avg_context_char_size": 0.0,
+      "avg_context_tokens": 0.0,
+      "avg_response_latency_ms": 0.0003
+    },
+    "Strategy B (Naive History)": {
+      "accepted_state_accuracy": {
+        "mean": 1.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "conflict_interpretation_accuracy": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "unsupported_fact_rate": {
+        "mean": 0.0938,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "contradiction_rate": {
+        "mean": 0.1562,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "provenance_citation_accuracy": {
+        "mean": 1.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "avg_context_char_size": 233.2812,
+      "avg_context_tokens": 58.0312,
+      "avg_response_latency_ms": 0.0045
+    },
+    "Strategy C (Raymember)": {
+      "accepted_state_accuracy": {
+        "mean": 1.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "conflict_interpretation_accuracy": {
+        "mean": 1.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "unsupported_fact_rate": {
+        "mean": 0.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "contradiction_rate": {
+        "mean": 0.0312,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "provenance_citation_accuracy": {
+        "mean": 1.0,
+        "std_dev": 0.0,
+        "ci_95_margin": 0.0
+      },
+      "avg_context_char_size": 491.6875,
+      "avg_context_tokens": 122.5625,
+      "avg_response_latency_ms": 0.0016
+    }
+  }
+}

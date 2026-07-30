@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raymember"
+version = "0.1.0"
+description = "Model-agnostic, plug-and-play persistent world-memory layer for AI agents"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Raymember Contributors", email = "dev@raymember.ai" }]
+requires-python = ">=3.9"
+dependencies = [
+    "sqlalchemy>=2.0.0",
+    "pydantic>=2.0.0",
+    "numpy>=1.20.0",
+]
+
+[project.optional-dependencies]
+ml = [
+    "scikit-learn>=1.0.0",
+    "joblib>=1.2.0",
+]
+dashboard = [
+    "fastapi>=0.95.0",
+    "uvicorn>=0.20.0",
+]
+all = [
+    "raymember[ml,dashboard]",
+]
+dev = [
+    "pytest>=7.0.0",
+    "raymember[all]",
+]
+
+[project.scripts]
+raymember = "raymember.cli.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"

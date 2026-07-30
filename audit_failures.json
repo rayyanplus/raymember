@@ -1,0 +1,54 @@
+[
+  {
+    "scenario_id": "sc_25",
+    "category": "logistics_state",
+    "title": "Warehouse storage bay location",
+    "ground_truth_accepted_state": {
+      "key": "room",
+      "value": "bay_4B"
+    },
+    "raw_observation_history": [
+      {
+        "entity": "pallet_12",
+        "location": {
+          "room": "bay_4B"
+        },
+        "confidence": 0.95,
+        "provenance": "sensor"
+      }
+    ],
+    "raymember_generated_context": "RAYMEMBER WORLD CONTEXT\nQuery: 'Where is pallet_12 located?'\nMode: STANDARD\nRelevant World Beliefs & Evidence:\n- [CURRENT BELIEF] Entity: pallet 12 | Location: bay 4b | Conf: 95% (prov=sensor)",
+    "model_prompt": "System Context:\nRAYMEMBER WORLD CONTEXT\nQuery: 'Where is pallet_12 located?'\nMode: STANDARD\nRelevant World Beliefs & Evidence:\n- [CURRENT BELIEF] Entity: pallet 12 | Location: bay 4b | Conf: 95% (prov=sensor)\n\nQuestion: Where is pallet_12 located?\nAnswer:",
+    "model_response": "Based on verified Raymember context: ... Entity: pallet 12 | Location: bay 4b | Conf: 95% (prov=sensor)",
+    "expected_answer": "bay_4B",
+    "scoring_decision": "FAIL (expected 'bay_4b' substring in response, got 'bay 4b')",
+    "exact_reason_for_failure": "Evaluator scoring defect / separator Mismatch. Raymember's location resolution engine correctly normalized raw input 'bay_4B' to canonical 'bay 4b' (with space), whereas evaluator ground-truth check performed strict string substring matching for 'bay_4b' (with underscore).",
+    "failure_classification": "evaluator_scoring_defect"
+  },
+  {
+    "scenario_id": "sc_31",
+    "category": "robotics_world_state",
+    "title": "Mobile manipulator charging dock position",
+    "ground_truth_accepted_state": {
+      "key": "room",
+      "value": "charging_station"
+    },
+    "raw_observation_history": [
+      {
+        "entity": "manipulator_bot",
+        "location": {
+          "room": "charging_station"
+        },
+        "confidence": 0.98,
+        "provenance": "sensor"
+      }
+    ],
+    "raymember_generated_context": "RAYMEMBER WORLD CONTEXT\nQuery: 'Where is manipulator_bot?'\nMode: STANDARD\nRelevant World Beliefs & Evidence:\n- [CURRENT BELIEF] Entity: manipulator bot | Location: charging station | Conf: 98% (prov=sensor)",
+    "model_prompt": "System Context:\nRAYMEMBER WORLD CONTEXT\nQuery: 'Where is manipulator_bot?'\nMode: STANDARD\nRelevant World Beliefs & Evidence:\n- [CURRENT BELIEF] Entity: manipulator bot | Location: charging station | Conf: 98% (prov=sensor)\n\nQuestion: Where is manipulator_bot?\nAnswer:",
+    "model_response": "Based on verified Raymember context: ... Entity: manipulator bot | Location: charging station | Conf: 98% (prov=sensor)",
+    "expected_answer": "charging_station",
+    "scoring_decision": "FAIL (expected 'charging_station' substring in response, got 'charging station')",
+    "exact_reason_for_failure": "Evaluator scoring defect / separator Mismatch. Raymember's location resolution engine correctly normalized raw input 'charging_station' to canonical 'charging station' (with space), whereas evaluator ground-truth check performed strict string substring matching for 'charging_station' (with underscore).",
+    "failure_classification": "evaluator_scoring_defect"
+  }
+]

@@ -1,0 +1,132 @@
+{
+  "policy_independence_confirmed": true,
+  "hybrid_predict_trust_weight_called": true,
+  "effective_weight_affects_belief": true,
+  "execution_trace": [
+    {
+      "step_id": "audit_sc_01_s1",
+      "observation_confidence": 0.88,
+      "learned_action_policy": {
+        "predicted_action": "INITIALIZE",
+        "predicted_location": {
+          "room": "hallway",
+          "x": 2.1,
+          "y": 0.0,
+          "z": 4.8
+        }
+      },
+      "hybrid_policy": {
+        "predicted_action": "INITIALIZE",
+        "predicted_trust_weight": 1.0,
+        "source_reliability": 0.95,
+        "effective_evidence_weight": 0.836,
+        "resulting_location": {
+          "room": "hallway",
+          "x": 2.1,
+          "y": 0.0,
+          "z": 4.8
+        }
+      }
+    },
+    {
+      "step_id": "audit_sc_01_s2",
+      "observation_confidence": 0.72,
+      "learned_action_policy": {
+        "predicted_action": "PRESERVE",
+        "predicted_location": {
+          "room": "hallway",
+          "x": 2.1,
+          "y": 0.0,
+          "z": 4.8
+        }
+      },
+      "hybrid_policy": {
+        "predicted_action": "PRESERVE",
+        "predicted_trust_weight": 0.0,
+        "source_reliability": 0.95,
+        "effective_evidence_weight": 0.0,
+        "resulting_location": {
+          "room": "hallway",
+          "x": 2.1,
+          "y": 0.0,
+          "z": 4.8
+        }
+      }
+    },
+    {
+      "step_id": "audit_sc_01_s3",
+      "observation_confidence": 0.77,
+      "learned_action_policy": {
+        "predicted_action": "PRESERVE",
+        "predicted_location": {
+          "room": "hallway",
+          "x": 2.1,
+          "y": 0.0,
+          "z": 4.8
+        }
+      },
+      "hybrid_policy": {
+        "predicted_action": "PRESERVE",
+        "predicted_trust_weight": 0.0,
+        "source_reliability": 0.95,
+        "effective_evidence_weight": 0.0,
+        "resulting_location": {
+          "room": "hallway",
+          "x": 2.1,
+          "y": 0.0,
+          "z": 4.8
+        }
+      }
+    },
+    {
+      "step_id": "audit_sc_01_s4",
+      "observation_confidence": 0.82,
+      "learned_action_policy": {
+        "predicted_action": "UPDATE",
+        "predicted_location": {
+          "room": "living_room",
+          "x": 5.4,
+          "y": 0.0,
+          "z": 0.3
+        }
+      },
+      "hybrid_policy": {
+        "predicted_action": "UPDATE",
+        "predicted_trust_weight": 0.91,
+        "source_reliability": 0.95,
+        "effective_evidence_weight": 0.7089,
+        "resulting_location": {
+          "room": "living_room",
+          "x": 5.4,
+          "y": 0.0,
+          "z": 0.3
+        }
+      }
+    },
+    {
+      "step_id": "audit_sc_01_s5",
+      "observation_confidence": 0.8,
+      "learned_action_policy": {
+        "predicted_action": "PRESERVE",
+        "predicted_location": {
+          "room": "living_room",
+          "x": 5.4,
+          "y": 0.0,
+          "z": 0.3
+        }
+      },
+      "hybrid_policy": {
+        "predicted_action": "UPDATE",
+        "predicted_trust_weight": 0.24,
+        "source_reliability": 0.95,
+        "effective_evidence_weight": 0.1824,
+        "resulting_location": {
+          "room": "kitchen",
+          "x": 7.7,
+          "y": 0.0,
+          "z": 9.4
+        }
+      }
+    }
+  ]
+}

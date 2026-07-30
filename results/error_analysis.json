@@ -1,0 +1,30 @@
+{
+  "total_errors_analyzed": 49,
+  "error_counts": {
+    "STALE_MEMORY": 0,
+    "FALSE_UPDATE": 0,
+    "MISSED_UPDATE": 0,
+    "OUT_OF_ORDER_FAILURE": 0,
+    "FALSE_DETECTION_FAILURE": 49,
+    "SOURCE_RELIABILITY_FAILURE": 0,
+    "ENTITY_AMBIGUITY_FAILURE": 0,
+    "OVERCONFIDENCE": 0,
+    "UNDERCONFIDENCE": 0,
+    "UNKNOWN": 0
+  },
+  "error_percentages": {
+    "STALE_MEMORY": 0.0,
+    "FALSE_UPDATE": 0.0,
+    "MISSED_UPDATE": 0.0,
+    "OUT_OF_ORDER_FAILURE": 0.0,
+    "FALSE_DETECTION_FAILURE": 100.0,
+    "SOURCE_RELIABILITY_FAILURE": 0.0,
+    "ENTITY_AMBIGUITY_FAILURE": 0.0,
+    "OVERCONFIDENCE": 0.0,
+    "UNDERCONFIDENCE": 0.0,
+    "UNKNOWN": 0.0
+  },
+  "representative_examples": {
+    "FALSE_DETECTION_FAILURE": "Step err_sc_0_s1: Obs room 'living_room' != True GT room 'office' (conf=0.77)"
+  }
+}

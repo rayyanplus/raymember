@@ -1,0 +1,165 @@
+{
+  "title": "Raymember Multi-Scale Context Efficiency & Retrieval Benchmark",
+  "timestamp": "2026-07-29",
+  "scales": {
+    "Small": {
+      "scale": "Small",
+      "entities": 10,
+      "observations": 50,
+      "scenarios_evaluated": 20,
+      "results": {
+        "1. No Memory": {
+          "answer_accuracy_pct": 0.0,
+          "current_state_accuracy_pct": 0.0,
+          "historical_accuracy_pct": 0.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 0.0,
+          "median_context_characters": 0,
+          "avg_selected_items": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_reduction_pct": 100.0,
+          "context_efficiency": 0.0,
+          "avg_retrieval_latency_ms": 0.0,
+          "avg_e2e_latency_ms": 0.0
+        },
+        "2. Naive Full Memory": {
+          "answer_accuracy_pct": 100.0,
+          "current_state_accuracy_pct": 100.0,
+          "historical_accuracy_pct": 100.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 5303.0,
+          "median_context_characters": 5303,
+          "avg_selected_items": 60.0,
+          "precision": 0.0167,
+          "recall": 1.0,
+          "context_reduction_pct": 0.0,
+          "context_efficiency": 0.0189,
+          "avg_retrieval_latency_ms": 32.82,
+          "avg_e2e_latency_ms": 32.82
+        },
+        "3. Raymember Ranked Memory": {
+          "answer_accuracy_pct": 100.0,
+          "current_state_accuracy_pct": 100.0,
+          "historical_accuracy_pct": 100.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 1223.6,
+          "median_context_characters": 1225,
+          "avg_selected_items": 10.0,
+          "precision": 0.1,
+          "recall": 1.0,
+          "context_reduction_pct": 76.93,
+          "context_efficiency": 0.0817,
+          "avg_retrieval_latency_ms": 32.91,
+          "avg_e2e_latency_ms": 32.91
+        }
+      }
+    },
+    "Medium": {
+      "scale": "Medium",
+      "entities": 100,
+      "observations": 500,
+      "scenarios_evaluated": 40,
+      "results": {
+        "1. No Memory": {
+          "answer_accuracy_pct": 0.0,
+          "current_state_accuracy_pct": 0.0,
+          "historical_accuracy_pct": 0.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 0.0,
+          "median_context_characters": 0,
+          "avg_selected_items": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_reduction_pct": 100.0,
+          "context_efficiency": 0.0,
+          "avg_retrieval_latency_ms": 0.0,
+          "avg_e2e_latency_ms": 0.0
+        },
+        "2. Naive Full Memory": {
+          "answer_accuracy_pct": 100.0,
+          "current_state_accuracy_pct": 100.0,
+          "historical_accuracy_pct": 100.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 52103.0,
+          "median_context_characters": 52103,
+          "avg_selected_items": 600.0,
+          "precision": 0.0017,
+          "recall": 1.0,
+          "context_reduction_pct": 0.0,
+          "context_efficiency": 0.0019,
+          "avg_retrieval_latency_ms": 356.73,
+          "avg_e2e_latency_ms": 356.73
+        },
+        "3. Raymember Ranked Memory": {
+          "answer_accuracy_pct": 100.0,
+          "current_state_accuracy_pct": 100.0,
+          "historical_accuracy_pct": 100.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 1223.8,
+          "median_context_characters": 1225,
+          "avg_selected_items": 10.0,
+          "precision": 0.1,
+          "recall": 1.0,
+          "context_reduction_pct": 97.65,
+          "context_efficiency": 0.0817,
+          "avg_retrieval_latency_ms": 321.95,
+          "avg_e2e_latency_ms": 321.95
+        }
+      }
+    },
+    "Large": {
+      "scale": "Large",
+      "entities": 500,
+      "observations": 2500,
+      "scenarios_evaluated": 40,
+      "results": {
+        "1. No Memory": {
+          "answer_accuracy_pct": 0.0,
+          "current_state_accuracy_pct": 0.0,
+          "historical_accuracy_pct": 0.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 0.0,
+          "median_context_characters": 0,
+          "avg_selected_items": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_reduction_pct": 100.0,
+          "context_efficiency": 0.0,
+          "avg_retrieval_latency_ms": 0.0,
+          "avg_e2e_latency_ms": 0.0
+        },
+        "2. Naive Full Memory": {
+          "answer_accuracy_pct": 100.0,
+          "current_state_accuracy_pct": 100.0,
+          "historical_accuracy_pct": 100.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 953603.0,
+          "median_context_characters": 953603,
+          "avg_selected_items": 3000.0,
+          "precision": 0.0003,
+          "recall": 1.0,
+          "context_reduction_pct": 0.0,
+          "context_efficiency": 0.0001,
+          "avg_retrieval_latency_ms": 10140.08,
+          "avg_e2e_latency_ms": 10140.08
+        },
+        "3. Raymember Ranked Memory": {
+          "answer_accuracy_pct": 42.5,
+          "current_state_accuracy_pct": 40.0,
+          "historical_accuracy_pct": 45.0,
+          "unsupported_claim_rate_pct": 0.0,
+          "avg_context_characters": 1224.9,
+          "median_context_characters": 1225,
+          "avg_selected_items": 10.0,
+          "precision": 0.0425,
+          "recall": 0.425,
+          "context_reduction_pct": 99.87,
+          "context_efficiency": 0.0347,
+          "avg_retrieval_latency_ms": 24842.49,
+          "avg_e2e_latency_ms": 24842.49
+        }
+      }
+    }
+  }
+}

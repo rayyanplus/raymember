@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "raymember_version": "0.1.0",
+    "numpy_version": "2.4.4",
+    "scikit_learn_version": "1.9.0",
+    "pydantic_version": "2.13.4",
+    "sqlalchemy_version": "2.0.51",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "timestamp": "2026-07-29T15:50:28.417786+00:00",
+    "dataset_size": "medium",
+    "random_seeds": [
+      42
+    ],
+    "splits": {
+      "train_fraction": 0.7,
+      "val_fraction": 0.15,
+      "test_fraction": 0.15
+    }
+  },
+  "ablation_results": {
+    "A_all_features": {
+      "system_name": "ablation_model",
+      "noise_condition": "mixed",
+      "num_steps": 96,
+      "location_accuracy": 0.875,
+      "movement_precision": 0.4545,
+      "movement_recall": 0.8,
+      "movement_f1": 0.5797,
+      "false_movement_rate": 0.0,
+      "stale_memory_rate": 0.0,
+      "incorrect_update_rate": 0.0,
+      "avg_belief_confidence": 0.0,
+      "brier_score": 0.0
+    },
+    "B_no_temporal_features": {
+      "system_name": "ablation_model",
+      "noise_condition": "mixed",
+      "num_steps": 96,
+      "location_accuracy": 0.8542,
+      "movement_precision": 0.4524,
+      "movement_recall": 0.76,
+      "movement_f1": 0.5672,
+      "false_movement_rate": 0.0,
+      "stale_memory_rate": 0.0,
+      "incorrect_update_rate": 0.0,
+      "avg_belief_confidence": 0.0,
+      "brier_score": 0.0
+    },
+    "C_no_spatial_features": {
+      "system_name": "ablation_model",
+      "noise_condition": "mixed",
+      "num_steps": 96,
+      "location_accuracy": 0.8229,
+      "movement_precision": 0.2632,
+      "movement_recall": 1.0,
+      "movement_f1": 0.4167,
+      "false_movement_rate": 0.0,
+      "stale_memory_rate": 0.0,
+      "incorrect_update_rate": 0.0,
+      "avg_belief_confidence": 0.0,
+      "brier_score": 0.0
+    },
+    "D_no_quality_features": {
+      "system_name": "ablation_model",
+      "noise_condition": "mixed",
+      "num_steps": 96,
+      "location_accuracy": 0.7604,
+      "movement_precision": 0.36,
+      "movement_recall": 0.72,
+      "movement_f1": 0.48,
+      "false_movement_rate": 0.0,
+      "stale_memory_rate": 0.0,
+      "incorrect_update_rate": 0.0,
+      "avg_belief_confidence": 0.0,
+      "brier_score": 0.0
+    },
+    "E_no_belief_features": {
+      "system_name": "ablation_model",
+      "noise_condition": "mixed",
+      "num_steps": 96,
+      "location_accuracy": 0.8125,
+      "movement_precision": 0.3929,
+      "movement_recall": 0.88,
+      "movement_f1": 0.5432,
+      "false_movement_rate": 0.0,
+      "stale_memory_rate": 0.0,
+      "incorrect_update_rate": 0.0,
+      "avg_belief_confidence": 0.0,
+      "brier_score": 0.0
+    }
+  }
+}

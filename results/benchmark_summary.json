@@ -1,0 +1,554 @@
+{
+  "metadata": {
+    "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "raymember_version": "0.1.0",
+    "numpy_version": "2.4.4",
+    "scikit_learn_version": "1.9.0",
+    "pydantic_version": "2.13.4",
+    "sqlalchemy_version": "2.0.51",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "timestamp": "2026-07-30T10:58:18.049609+00:00",
+    "dataset_size": "small",
+    "random_seeds": [
+      42
+    ],
+    "splits": {
+      "train_fraction": 0.7,
+      "val_fraction": 0.15,
+      "test_fraction": 0.15
+    }
+  },
+  "summary": {
+    "clean": {
+      "1_latest_observation": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "2_deterministic_rules": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.3797,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "3_probabilistic_engine": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "4_raymember_learned_policy": {
+        "mean_accuracy": 0.9062,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.9062,
+          0.9062
+        ],
+        "mean_macro_f1": 0.6667,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0469,
+        "std_stale_memory_rate": 0.0
+      },
+      "5_raymember_hybrid_policy": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      }
+    },
+    "missing": {
+      "1_latest_observation": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "2_deterministic_rules": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.3797,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "3_probabilistic_engine": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "4_raymember_learned_policy": {
+        "mean_accuracy": 0.9062,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.9062,
+          0.9062
+        ],
+        "mean_macro_f1": 0.6667,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0469,
+        "std_stale_memory_rate": 0.0
+      },
+      "5_raymember_hybrid_policy": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      }
+    },
+    "false_detection": {
+      "1_latest_observation": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.4167,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "2_deterministic_rules": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.3377,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "3_probabilistic_engine": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.4167,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "4_raymember_learned_policy": {
+        "mean_accuracy": 0.7344,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7344,
+          0.7344
+        ],
+        "mean_macro_f1": 0.3125,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.125,
+        "std_stale_memory_rate": 0.0
+      },
+      "5_raymember_hybrid_policy": {
+        "mean_accuracy": 0.8281,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.8281,
+          0.8281
+        ],
+        "mean_macro_f1": 0.4211,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0938,
+        "std_stale_memory_rate": 0.0
+      }
+    },
+    "delayed": {
+      "1_latest_observation": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "2_deterministic_rules": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.3797,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "3_probabilistic_engine": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "4_raymember_learned_policy": {
+        "mean_accuracy": 0.9062,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.9062,
+          0.9062
+        ],
+        "mean_macro_f1": 0.6667,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0469,
+        "std_stale_memory_rate": 0.0
+      },
+      "5_raymember_hybrid_policy": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      }
+    },
+    "out_of_order": {
+      "1_latest_observation": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "2_deterministic_rules": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.3797,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "3_probabilistic_engine": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "4_raymember_learned_policy": {
+        "mean_accuracy": 0.9062,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.9062,
+          0.9062
+        ],
+        "mean_macro_f1": 0.6667,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0469,
+        "std_stale_memory_rate": 0.0
+      },
+      "5_raymember_hybrid_policy": {
+        "mean_accuracy": 1.0,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          1.0,
+          1.0
+        ],
+        "mean_macro_f1": 0.7895,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      }
+    },
+    "conflicting": {
+      "1_latest_observation": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.4167,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "2_deterministic_rules": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.3377,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "3_probabilistic_engine": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.4167,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "4_raymember_learned_policy": {
+        "mean_accuracy": 0.7344,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7344,
+          0.7344
+        ],
+        "mean_macro_f1": 0.3125,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.125,
+        "std_stale_memory_rate": 0.0
+      },
+      "5_raymember_hybrid_policy": {
+        "mean_accuracy": 0.8281,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.8281,
+          0.8281
+        ],
+        "mean_macro_f1": 0.4211,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0938,
+        "std_stale_memory_rate": 0.0
+      }
+    },
+    "mixed": {
+      "1_latest_observation": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.4167,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "2_deterministic_rules": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.3377,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "3_probabilistic_engine": {
+        "mean_accuracy": 0.7656,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7656,
+          0.7656
+        ],
+        "mean_macro_f1": 0.4167,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0781,
+        "std_stale_memory_rate": 0.0
+      },
+      "4_raymember_learned_policy": {
+        "mean_accuracy": 0.7344,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.7344,
+          0.7344
+        ],
+        "mean_macro_f1": 0.3125,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.125,
+        "std_stale_memory_rate": 0.0
+      },
+      "5_raymember_hybrid_policy": {
+        "mean_accuracy": 0.8281,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.8281,
+          0.8281
+        ],
+        "mean_macro_f1": 0.4211,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0938,
+        "std_stale_memory_rate": 0.0
+      }
+    },
+    "ood_extreme": {
+      "1_latest_observation": {
+        "mean_accuracy": 0.5417,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.5417,
+          0.5417
+        ],
+        "mean_macro_f1": 0.3091,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "2_deterministic_rules": {
+        "mean_accuracy": 0.5417,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.5417,
+          0.5417
+        ],
+        "mean_macro_f1": 0.2609,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "3_probabilistic_engine": {
+        "mean_accuracy": 0.5417,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.5417,
+          0.5417
+        ],
+        "mean_macro_f1": 0.3091,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      },
+      "4_raymember_learned_policy": {
+        "mean_accuracy": 0.55,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.55,
+          0.55
+        ],
+        "mean_macro_f1": 0.3333,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.05,
+        "std_stale_memory_rate": 0.0
+      },
+      "5_raymember_hybrid_policy": {
+        "mean_accuracy": 0.6667,
+        "std_accuracy": 0.0,
+        "ci95_accuracy": [
+          0.6667,
+          0.6667
+        ],
+        "mean_macro_f1": 0.4198,
+        "std_macro_f1": 0.0,
+        "mean_stale_memory_rate": 0.0,
+        "std_stale_memory_rate": 0.0
+      }
+    }
+  },
+  "paired_statistics": {
+    "4_raymember_learned_policy_vs_2_deterministic_rules": {
+      "test_name": "Paired Differences across Seeds",
+      "number_of_seeds": 1,
+      "mean_difference": -0.0312,
+      "std_difference": 0.0,
+      "ci95_difference": [
+        -0.0312,
+        -0.0312
+      ],
+      "effect_size_cohens_d": -31200.0
+    },
+    "4_raymember_learned_policy_vs_3_probabilistic_engine": {
+      "test_name": "Paired Differences across Seeds",
+      "number_of_seeds": 1,
+      "mean_difference": -0.0312,
+      "std_difference": 0.0,
+      "ci95_difference": [
+        -0.0312,
+        -0.0312
+      ],
+      "effect_size_cohens_d": -31200.0
+    },
+    "5_raymember_hybrid_policy_vs_3_probabilistic_engine": {
+      "test_name": "Paired Differences across Seeds",
+      "number_of_seeds": 1,
+      "mean_difference": 0.0625,
+      "std_difference": 0.0,
+      "ci95_difference": [
+        0.0625,
+        0.0625
+      ],
+      "effect_size_cohens_d": 62500.0
+    }
+  }
+}

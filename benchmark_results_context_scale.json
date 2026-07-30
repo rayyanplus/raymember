@@ -1,0 +1,158 @@
+{
+  "Small": {
+    "scale": "Small",
+    "num_entities": 10,
+    "num_observations": 50,
+    "latency_breakdown_ms": {
+      "cold_cache_latency_ms": 1.55,
+      "warm_cache_latency_ms": 0.0,
+      "db_query_time_ms": 3.08,
+      "ranking_time_ms": 0.02,
+      "context_formatting_time_ms": 0.02,
+      "total_e2e_retrieval_time_ms": 1.55
+    },
+    "strategies": {
+      "Naive Full Memory": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 0.0,
+        "char_size": 5313,
+        "token_size": 1328,
+        "context_reduction": "0.0%",
+        "retrieval_latency_ms": 2.88
+      },
+      "Raymember Standard": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 1.0,
+        "char_size": 1608,
+        "token_size": 402,
+        "context_reduction": "69.7%",
+        "retrieval_latency_ms": 3.11
+      },
+      "Raymember Compact Conflict-Aware": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 1.0,
+        "char_size": 2493,
+        "token_size": 623,
+        "context_reduction": "53.1%",
+        "retrieval_latency_ms": 1.46
+      }
+    }
+  },
+  "Medium": {
+    "scale": "Medium",
+    "num_entities": 100,
+    "num_observations": 500,
+    "latency_breakdown_ms": {
+      "cold_cache_latency_ms": 2.09,
+      "warm_cache_latency_ms": 0.0,
+      "db_query_time_ms": 2.85,
+      "ranking_time_ms": 0.015,
+      "context_formatting_time_ms": 0.015,
+      "total_e2e_retrieval_time_ms": 2.09
+    },
+    "strategies": {
+      "Naive Full Memory": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 0.0,
+        "char_size": 52823,
+        "token_size": 13205,
+        "context_reduction": "0.0%",
+        "retrieval_latency_ms": 15.12
+      },
+      "Raymember Standard": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 1.0,
+        "char_size": 1608,
+        "token_size": 402,
+        "context_reduction": "97.0%",
+        "retrieval_latency_ms": 4.04
+      },
+      "Raymember Compact Conflict-Aware": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 1.0,
+        "char_size": 2493,
+        "token_size": 623,
+        "context_reduction": "95.3%",
+        "retrieval_latency_ms": 2.8
+      }
+    }
+  },
+  "Large": {
+    "scale": "Large",
+    "num_entities": 300,
+    "num_observations": 1500,
+    "latency_breakdown_ms": {
+      "cold_cache_latency_ms": 3.42,
+      "warm_cache_latency_ms": 0.0,
+      "db_query_time_ms": 4.26,
+      "ranking_time_ms": 0.015,
+      "context_formatting_time_ms": 0.015,
+      "total_e2e_retrieval_time_ms": 3.42
+    },
+    "strategies": {
+      "Naive Full Memory": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 0.0,
+        "char_size": 158403,
+        "token_size": 39600,
+        "context_reduction": "0.0%",
+        "retrieval_latency_ms": 27.77
+      },
+      "Raymember Standard": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 1.0,
+        "char_size": 1608,
+        "token_size": 402,
+        "context_reduction": "99.0%",
+        "retrieval_latency_ms": 6.07
+      },
+      "Raymember Compact Conflict-Aware": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 1.0,
+        "char_size": 2493,
+        "token_size": 623,
+        "context_reduction": "98.4%",
+        "retrieval_latency_ms": 3.94
+      }
+    }
+  },
+  "Extra-Large": {
+    "scale": "Extra-Large",
+    "num_entities": 1000,
+    "num_observations": 10000,
+    "latency_breakdown_ms": {
+      "cold_cache_latency_ms": 10.6,
+      "warm_cache_latency_ms": 0.0,
+      "db_query_time_ms": 19.31,
+      "ranking_time_ms": 0.02,
+      "context_formatting_time_ms": 0.02,
+      "total_e2e_retrieval_time_ms": 10.6
+    },
+    "strategies": {
+      "Naive Full Memory": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 0.0,
+        "char_size": 987925,
+        "token_size": 246981,
+        "context_reduction": "0.0%",
+        "retrieval_latency_ms": 199.84
+      },
+      "Raymember Standard": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 1.0,
+        "char_size": 1988,
+        "token_size": 497,
+        "context_reduction": "99.8%",
+        "retrieval_latency_ms": 21.41
+      },
+      "Raymember Compact Conflict-Aware": {
+        "accepted_state_recall": 1.0,
+        "conflict_recall": 1.0,
+        "char_size": 3906,
+        "token_size": 976,
+        "context_reduction": "99.6%",
+        "retrieval_latency_ms": 16.58
+      }
+    }
+  }
+}

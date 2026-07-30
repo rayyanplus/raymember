@@ -1,0 +1,54 @@
+{
+  "sensitivity_test": [
+    {
+      "trust_weight": 0.0,
+      "effective_evidence_weight": 0.0,
+      "updated_bedroom_probability": 0.8,
+      "updated_living_room_probability": 0.2,
+      "most_likely_location": {
+        "room": "bedroom"
+      },
+      "normalized_entropy": 0.7219
+    },
+    {
+      "trust_weight": 0.25,
+      "effective_evidence_weight": 0.19,
+      "updated_bedroom_probability": 0.6724,
+      "updated_living_room_probability": 0.3276,
+      "most_likely_location": {
+        "room": "bedroom"
+      },
+      "normalized_entropy": 0.9124
+    },
+    {
+      "trust_weight": 0.5,
+      "effective_evidence_weight": 0.38,
+      "updated_bedroom_probability": 0.5799,
+      "updated_living_room_probability": 0.4201,
+      "most_likely_location": {
+        "room": "bedroom"
+      },
+      "normalized_entropy": 0.9815
+    },
+    {
+      "trust_weight": 0.75,
+      "effective_evidence_weight": 0.57,
+      "updated_bedroom_probability": 0.5098,
+      "updated_living_room_probability": 0.4902,
+      "most_likely_location": {
+        "room": "bedroom"
+      },
+      "normalized_entropy": 0.9997
+    },
+    {
+      "trust_weight": 1.0,
+      "effective_evidence_weight": 0.76,
+      "updated_bedroom_probability": 0.4548,
+      "updated_living_room_probability": 0.5452,
+      "most_likely_location": {
+        "room": "living_room"
+      },
+      "normalized_entropy": 0.9941
+    }
+  ]
+}

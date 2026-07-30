@@ -1,0 +1,67 @@
+{
+  "brier_score": 0.1748,
+  "expected_calibration_error_ece": 0.1796,
+  "maximum_calibration_error_mce": 0.7465,
+  "reliability_bins": [
+    {
+      "bin_range": "0.0-0.1",
+      "mean_predicted_confidence": 0.05,
+      "empirical_accuracy": 0.0,
+      "sample_count": 0
+    },
+    {
+      "bin_range": "0.1-0.2",
+      "mean_predicted_confidence": 0.15,
+      "empirical_accuracy": 0.0,
+      "sample_count": 0
+    },
+    {
+      "bin_range": "0.2-0.3",
+      "mean_predicted_confidence": 0.25,
+      "empirical_accuracy": 0.0,
+      "sample_count": 0
+    },
+    {
+      "bin_range": "0.3-0.4",
+      "mean_predicted_confidence": 0.35,
+      "empirical_accuracy": 0.0,
+      "sample_count": 0
+    },
+    {
+      "bin_range": "0.4-0.5",
+      "mean_predicted_confidence": 0.45,
+      "empirical_accuracy": 0.0,
+      "sample_count": 0
+    },
+    {
+      "bin_range": "0.5-0.6",
+      "mean_predicted_confidence": 0.6,
+      "empirical_accuracy": 0.0,
+      "sample_count": 2
+    },
+    {
+      "bin_range": "0.6-0.7",
+      "mean_predicted_confidence": 0.6494,
+      "empirical_accuracy": 0.0,
+      "sample_count": 16
+    },
+    {
+      "bin_range": "0.7-0.8",
+      "mean_predicted_confidence": 0.7465,
+      "empirical_accuracy": 0.0,
+      "sample_count": 17
+    },
+    {
+      "bin_range": "0.8-0.9",
+      "mean_predicted_confidence": 0.8486,
+      "empirical_accuracy": 0.8514,
+      "sample_count": 74
+    },
+    {
+      "bin_range": "0.9-1.0",
+      "mean_predicted_confidence": 0.94,
+      "empirical_accuracy": 1.0,
+      "sample_count": 41
+    }
+  ]
+}
