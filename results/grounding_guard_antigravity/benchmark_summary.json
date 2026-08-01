@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "provider": "Antigravity(Antigravity-Gemini-3.6-Flash)",
+    "is_real_model": true,
+    "total_scenarios": 24,
+    "num_runs": 1,
+    "total_trials": 120,
+    "timestamp": "2026-08-01T12:00:14.357422+00:00"
+  },
+  "systems": {
+    "baseline": {
+      "grounded_answer_accuracy": 0.3333333333333333,
+      "supported_claim_rate": 0.3333333333333333,
+      "unsupported_claim_rate": 0.6666666666666666,
+      "contradiction_rate": 0.5833333333333334,
+      "hallucination_rate": 0.08333333333333333,
+      "false_certainty_rate": 0.0,
+      "correct_abstention_rate": 0.3333333333333333,
+      "source_attribution_accuracy": 0.5,
+      "deterministic_answer_rate": 0.0,
+      "llm_call_avoidance_rate": 0.0,
+      "validation_failure_rate": 0.0,
+      "fallback_rate": 0.0,
+      "false_premise_correction_rate": 0.0,
+      "entity_isolation_accuracy": 0.0,
+      "temporal_gap_abstention_rate": 0.0,
+      "avg_latency_ms": 0.016270834748866037,
+      "avg_input_tokens": 88.04166666666667,
+      "avg_context_chars": 49.0
+    },
+    "full_context": {
+      "grounded_answer_accuracy": 0.3333333333333333,
+      "supported_claim_rate": 0.3333333333333333,
+      "unsupported_claim_rate": 0.6666666666666666,
+      "contradiction_rate": 0.25,
+      "hallucination_rate": 0.5833333333333334,
+      "false_certainty_rate": 0.6666666666666666,
+      "correct_abstention_rate": 0.0,
+      "source_attribution_accuracy": 0.6666666666666666,
+      "deterministic_answer_rate": 0.0,
+      "llm_call_avoidance_rate": 0.0,
+      "validation_failure_rate": 0.0,
+      "fallback_rate": 0.0,
+      "false_premise_correction_rate": 0.0,
+      "entity_isolation_accuracy": 0.08333333333333333,
+      "temporal_gap_abstention_rate": 0.0,
+      "avg_latency_ms": 0.39123333226598334,
+      "avg_input_tokens": 2071.5416666666665,
+      "avg_context_chars": 7899.0
+    },
+    "naive_retrieval": {
+      "grounded_answer_accuracy": 0.3333333333333333,
+      "supported_claim_rate": 0.3333333333333333,
+      "unsupported_claim_rate": 0.6666666666666666,
+      "contradiction_rate": 0.25,
+      "hallucination_rate": 0.5833333333333334,
+      "false_certainty_rate": 0.6666666666666666,
+      "correct_abstention_rate": 0.0,
+      "source_attribution_accuracy": 0.6666666666666666,
+      "deterministic_answer_rate": 0.0,
+      "llm_call_avoidance_rate": 0.0,
+      "validation_failure_rate": 0.0,
+      "fallback_rate": 0.0,
+      "false_premise_correction_rate": 0.0,
+      "entity_isolation_accuracy": 0.08333333333333333,
+      "temporal_gap_abstention_rate": 0.0,
+      "avg_latency_ms": 0.9417374985787319,
+      "avg_input_tokens": 188.54166666666666,
+      "avg_context_chars": 363.0
+    },
+    "raymember": {
+      "grounded_answer_accuracy": 0.5,
+      "supported_claim_rate": 0.5,
+      "unsupported_claim_rate": 0.5,
+      "contradiction_rate": 0.25,
+      "hallucination_rate": 0.375,
+      "false_certainty_rate": 0.5,
+      "correct_abstention_rate": 0.16666666666666666,
+      "source_attribution_accuracy": 0.6666666666666666,
+      "deterministic_answer_rate": 0.0,
+      "llm_call_avoidance_rate": 0.0,
+      "validation_failure_rate": 0.0,
+      "fallback_rate": 0.0,
+      "false_premise_correction_rate": 0.0,
+      "entity_isolation_accuracy": 0.08333333333333333,
+      "temporal_gap_abstention_rate": 0.0,
+      "avg_latency_ms": 753.4292125013357,
+      "avg_input_tokens": 217.04166666666666,
+      "avg_context_chars": 469.9583333333333
+    },
+    "raymember_grounded": {
+      "grounded_answer_accuracy": 0.5833333333333334,
+      "supported_claim_rate": 0.5833333333333334,
+      "unsupported_claim_rate": 0.4166666666666667,
+      "contradiction_rate": 0.3333333333333333,
+      "hallucination_rate": 0.4166666666666667,
+      "false_certainty_rate": 0.3333333333333333,
+      "correct_abstention_rate": 0.25,
+      "source_attribution_accuracy": 0.9166666666666666,
+      "deterministic_answer_rate": 1.0,
+      "llm_call_avoidance_rate": 1.0,
+      "validation_failure_rate": 0.0,
+      "fallback_rate": 0.0,
+      "false_premise_correction_rate": 0.08333333333333333,
+      "entity_isolation_accuracy": 0.08333333333333333,
+      "temporal_gap_abstention_rate": 0.08333333333333333,
+      "avg_latency_ms": 844.1027625018856,
+      "avg_input_tokens": 16.458333333333332,
+      "avg_context_chars": 101.45833333333333
+    }
+  },
+  "accuracy_by_category": {
+    "CONFLICT_RESOLUTION": {
+      "baseline": 0.0,
+      "full_context": 1.0,
+      "naive_retrieval": 1.0,
+      "raymember": 1.0,
+      "raymember_grounded": 1.0
+    },
+    "CONTRADICTORY_EVIDENCE": {
+      "baseline": 0.0,
+      "full_context": 0.0,
+      "naive_retrieval": 0.0,
+      "raymember": 0.0,
+      "raymember_grounded": 0.0
+    },
+    "CROSS_SESSION_PERSISTENCE": {
+      "baseline": 0.0,
+      "full_context": 0.0,
+      "naive_retrieval": 0.0,
+      "raymember": 0.0,
+      "raymember_grounded": 0.0
+    },
+    "CURRENT_STATE": {
+      "baseline": 0.0,
+      "full_context": 0.0,
+      "naive_retrieval": 0.0,
+      "raymember": 0.0,
+      "raymember_grounded": 0.0
+    },
+    "DISTRACTOR_HALLUCINATION": {
+      "baseline": 1.0,
+      "full_context": 0.0,
+      "naive_retrieval": 0.0,
+      "raymember": 1.0,
+      "raymember_grounded": 1.0
+    },
+    "DISTRACTOR_RESISTANCE": {
+      "baseline": 0.0,
+      "full_context": 1.0,
+      "naive_retrieval": 1.0,
+      "raymember": 1.0,
+      "raymember_grounded": 1.0
+    },
+    "ENTITY_CONFUSION": {
+      "baseline": 0.0,
+      "full_context": 1.0,
+      "naive_retrieval": 1.0,
+      "raymember": 1.0,
+      "raymember_grounded": 1.0
+    },
+    "FALSE_PREMISE": {
+      "baseline": 0.0,
+      "full_context": 0.0,
+      "naive_retrieval": 0.0,
+      "raymember": 0.0,
+      "raymember_grounded": 1.0
+    },
+    "MISSING_INFO": {
+      "baseline": 1.0,
+      "full_context": 0.0,
+      "naive_retrieval": 0.0,
+      "raymember": 0.0,
+      "raymember_grounded": 1.0
+    },
+    "TEMPORAL_HALLUCINATION": {
+      "baseline": 1.0,
+      "full_context": 0.0,
+      "naive_retrieval": 0.0,
+      "raymember": 0.0,
+      "raymember_grounded": 1.0
+    },
+    "TEMPORAL_REASONING": {
+      "baseline": 0.0,
+      "full_context": 1.0,
+      "naive_retrieval": 1.0,
+      "raymember": 1.0,
+      "raymember_grounded": 0.0
+    },
+    "UNCERTAIN_EVIDENCE": {
+      "baseline": 1.0,
+      "full_context": 0.0,
+      "naive_retrieval": 0.0,
+      "raymember": 1.0,
+      "raymember_grounded": 0.0
+    }
+  },
+  "accuracy_by_scale": {
+    "50": {
+      "baseline": 0.5,
+      "full_context": 0.5,
+      "naive_retrieval": 0.5,
+      "raymember": 1.0,
+      "raymember_grounded": 1.0
+    },
+    "500": {
+      "baseline": 0.5,
+      "full_context": 0.5,
+      "naive_retrieval": 0.5,
+      "raymember": 1.0,
+      "raymember_grounded": 1.0
+    }
+  }
+}
